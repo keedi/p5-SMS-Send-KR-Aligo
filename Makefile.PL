@@ -15,8 +15,10 @@ my %WriteMakefileArgs = (
   "NAME" => "SMS::Send::KR::Aligo",
   "PREREQ_PM" => {
     "HTTP::Tiny" => 0,
+    "IO::Socket::SSL" => "2.070",
     "JSON" => 0,
-    "SMS::Send" => 0,
+    "Net::SSLeay" => "1.90",
+    "SMS::Send" => "1.06",
     "parent" => 0
   },
   "TEST_REQUIRES" => {
@@ -33,8 +35,10 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "File::Spec" => 0,
   "HTTP::Tiny" => 0,
+  "IO::Socket::SSL" => "2.070",
   "JSON" => 0,
-  "SMS::Send" => 0,
+  "Net::SSLeay" => "1.90",
+  "SMS::Send" => "1.06",
   "Test::More" => 0,
   "parent" => 0
 );

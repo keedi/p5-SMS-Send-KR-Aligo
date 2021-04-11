@@ -151,7 +151,7 @@ __END__
 
     # send a message
     my $sent = $sender->send_sms(
-        text  => "You message may use up to 80 chars and must be utf8",
+        text  => "You message may use up to 90 chars and must be utf8",
         to    => "01012345678",
     );
 
@@ -194,17 +194,17 @@ SMS::Send driver for sending SMS messages with the L<Aligo SMS service|https://s
 
 This constructor should not be called directly. See L<SMS::Send> for details.
 
-Available parameters are:
+Available L<attributes|/ATTRIBUTES> are:
 
 =for :list
-* _url
-* _agent
-* _timeout
-* _from
-* _type
-* _delay
-* _id
-* _api_key
+* C<_url>
+* C<_agent>
+* C<_timeout>
+* C<_from>
+* C<_type>
+* C<_delay>
+* C<_id>
+* C<_api_key>
 
 
 =method send_sms
@@ -214,13 +214,32 @@ This method should not be called directly. See L<SMS::Send> for details.
 Available parameters are:
 
 =for :list
-* text
-* to
-* _from
-* _type
-* _delay
-* _subject
-* _epoch
+* C<text>:
+  SMS: 0 ~ 90 Byte,
+  LMS/MMS: 1 ~ 2000 Byte
+* C<to>:
+  Number of the receiver
+* C<_from>:
+  B<[OPTIONAL]>
+  Registered number of the sender.
+  Use this parameter to override the initial attribute value.
+* C<_type>:
+  B<[OPTIONAL]>
+  C<SMS>, C<LMS>, C<MMS>.
+  Use this parameter to override the initial attribute value.
+* C<_delay>:
+  B<[OPTIONAL]>
+  Delay second between sending sms.
+  Default is C<0>.
+* C<_subject>:
+  B<[OPTIONAL]>
+  1 ~ 44 Byte only for LMS/MMS.
+  Default is to use the first part of the C<text> as a subject.
+* C<_epoch>:
+  B<[OPTIONAL]>
+  Reservation scheduling to send sms.
+  Based on Asia/Seoul time zone.
+  Default is to send sms from the fly.
 
 
 =attr _url
