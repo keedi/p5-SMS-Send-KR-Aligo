@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}
 
 {{ $NEXT }}
+
+0.005     2021-04-12 00:24:41+09:00 Asia/Seoul
     - Update the document clearly
 
 0.004     2021-04-11 22:24:30+09:00 Asia/Seoul
